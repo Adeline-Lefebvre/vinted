@@ -10,6 +10,13 @@ const Home = () => {
       <div className="images">
         <img className="image1" src={image1} alt="" />
         <img className="image2" src={image2} alt="" />
+        <div className="CTA">
+          <h1>Prêts à faire du tri dans vos placards ?</h1>
+          <div className="CTA-blue">Vends maintenant</div>
+          <a href="https://www.vinted.fr/how_it_works">
+            Découvrir comment ça marche
+          </a>
+        </div>
       </div>
 
       <a target="_blank" href="http://localhost:3000/offer">
