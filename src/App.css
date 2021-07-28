@@ -16,6 +16,7 @@ h1 {
   height: 50px;
   border-bottom: lightgray solid 1px;
   padding: 0 100px;
+  display: flex;
 }
 
 .logo {
@@ -30,7 +31,7 @@ h1 {
 }
 
 .image1 {
-  height: 550px;
+  height: 500px;
   width: 100%;
   object-fit: cover;
   top: 0;
@@ -39,9 +40,10 @@ h1 {
 }
 
 .image2 {
+  width: 50%;
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
 }
 
 .CTA {
@@ -66,6 +68,8 @@ h1 {
   border-radius: 5px;
   margin-bottom: 15px;
   font-size: 16px;
+  margin: auto 0;
+  cursor: pointer;
 }
 
 .CTA > a {
@@ -84,17 +88,91 @@ h1 {
   margin-bottom: 15px;
   border: var(--blue) solid 1px;
   background-color: white;
+  margin: auto 0;
+  cursor: pointer;
 }
 
 .searchBar {
-  font-size: 18px;
+  margin: 8px 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.searchInput {
+  font-size: 17px;
   line-height: 32px;
   width: 700px;
   color: gray;
-  padding-left: 20px;
+  padding-left: 40px;
   border-radius: 5px;
   margin-bottom: 15px;
   border: none;
   background-color: #f5f6f7;
-  margin: auto 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.searchBar > i {
+  font-size: 15px;
+  color: rgb(185, 185, 185);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 100px;
+}
+
+.content img {
+  width: 235px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.username {
+  color: gray;
+  margin: 20px 0;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.offer-details {
+  display: flex;
+}
+
+.itemInfos {
+  background-color: white;
+  padding: 40px;
+}
+
+.details-titles {
+  color: #999999;
+  font-size: 12px;
+}
+
+.details-col-2 {
+  margin-left: 50px;
+  font-size: 12px;
+}
+
+.offer-details {
+  padding-bottom: 50px;
+  border-bottom: #999999 solid 1px;
+}
+
+.offer-line-2 {
+  margin: 50px 0;
+}
+
+.acheter {
+  width: 100%;
 }
