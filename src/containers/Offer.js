@@ -59,7 +59,7 @@ const Offer = ({ data }) => {
         </div>
         <div className="offer-line-2">
           <div style={{ fontWeight: "bold" }}>{offer.product_name}</div>
-          <div style={{ color: "gray", margin: "15px 0" }}>
+          <div style={{ color: "gray", margin: "15px 0", maxWidth: "300px" }}>
             {offer.product_description}
           </div>
           <div>{offer.owner.account.username}</div>
