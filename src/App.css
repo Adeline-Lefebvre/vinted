@@ -1,3 +1,34 @@
-.header > img {
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.header {
   height: 50px;
+  border-bottom: lightgray solid 1px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.images {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image1 {
+  height: 530px;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+.image2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

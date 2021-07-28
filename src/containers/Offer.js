@@ -4,7 +4,7 @@ const Offer = () => {
   return (
     <div>
       Offer page
-      <a target="_blank" href="http://localhost:3001/home">
+      <a target="_blank" href="http://localhost:3000/home">
         Go to Homepage
       </a>
     </div>
