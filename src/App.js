@@ -13,7 +13,7 @@ import Cookies from "js-cookie";
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [token, setToken] = useState(Cookies.get("Token") || null);
   const [welcomeMessage, setWelcomeMessage] = useState("");
 
   const setUser = (token) => {
