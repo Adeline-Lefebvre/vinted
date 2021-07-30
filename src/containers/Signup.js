@@ -73,7 +73,9 @@ const Signup = ({ setUser }) => {
               setNewsletter(true);
             }}
           />
-          <span style={{ color: "gray" }}>S'inscrire à notre newsletter</span>
+          <span style={{ color: "gray", marginLeft: "10px" }}>
+            S'inscrire à notre newsletter
+          </span>
           <p className="conditions-checkbox">
             En m'inscrivant je confirme avoir lu et accepté les Termes,
             Conditions et Politique de Confidentialité de Vinted. Je confirme

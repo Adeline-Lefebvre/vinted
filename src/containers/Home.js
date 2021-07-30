@@ -1,6 +1,7 @@
 import image1 from "../image1.jpeg";
 import image2 from "../image2.svg";
 import Content from "../components/Content.js";
+import Filters from "../components/Filters.js";
 
 const Home = ({ data, welcomeMessage }) => {
   return (
@@ -11,6 +12,8 @@ const Home = ({ data, welcomeMessage }) => {
       >
         {welcomeMessage}
       </div>
+      <Filters />
+
       <div className="images">
         <img className="image1" src={image1} alt="" />
         <img className="image2" src={image2} alt="" />
