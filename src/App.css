@@ -114,6 +114,10 @@ h1 {
   left: 0;
 }
 
+input:focus {
+  outline: none;
+}
+
 .searchBar > i {
   font-size: 15px;
   color: rgb(185, 185, 185);
