@@ -65,6 +65,7 @@ h1 {
   line-height: 44px;
   text-align: center;
   width: 164px;
+  border: none;
   border-radius: 5px;
   margin-bottom: 15px;
   font-size: 16px;
@@ -81,11 +82,10 @@ h1 {
 .CTA-white {
   font-size: 12px;
   line-height: 25px;
-  width: 150px;
+  width: 100px;
   color: var(--blue);
   text-align: center;
   border-radius: 5px;
-  margin-bottom: 15px;
   border: var(--blue) solid 1px;
   background-color: white;
   margin: auto 0;
@@ -93,7 +93,7 @@ h1 {
 }
 
 .searchBar {
-  margin: 8px 50px;
+  margin: 8px 45px;
   position: relative;
   top: 0;
   left: 0;
@@ -175,4 +175,51 @@ h1 {
 
 .acheter {
   width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.form > input,
+.form > div {
+  margin-bottom: 30px;
+  line-height: 40px;
+  font-size: 16px;
+  border: none;
+}
+
+.form > input {
+  border-bottom: pink solid 1px;
+}
+
+.form > button {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px;
+  border: gray solid 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.conditions-checkbox {
+  font-size: 12px;
+  color: gray;
+  line-height: 15px;
+  margin-top: 0;
+}
+
+.link {
+  font-size: 10px;
+  color: var(--blue);
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
 }

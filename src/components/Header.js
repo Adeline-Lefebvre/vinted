@@ -17,7 +17,15 @@ const Header = () => {
         />
         <i class="fas fa-search"></i>
       </div>
-      <button className="CTA-white">s'inscrire | Se connecter</button>
+      <Link to="/user/signup" style={{ margin: "auto 0" }}>
+        <button className="CTA-white" style={{ marginRight: "10px" }}>
+          s'inscrire
+        </button>
+      </Link>
+      <Link to="/user/login" style={{ margin: "auto 0" }}>
+        <button className="CTA-white">Se connecter</button>
+      </Link>
+
       <button
         className="CTA-blue"
         style={{

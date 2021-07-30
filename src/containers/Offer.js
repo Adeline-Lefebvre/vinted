@@ -14,7 +14,11 @@ const Offer = ({ data }) => {
         padding: "40px 100px 300px 100px",
       }}
     >
-      <img src={offer.product_image.url} alt="" />
+      <img
+        src={offer.product_image.secure_url}
+        alt=""
+        style={{ width: "400px" }}
+      />
       <div className="itemInfos">
         <div
           style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "15px" }}
@@ -30,31 +34,11 @@ const Offer = ({ data }) => {
             <div>EMPLACEMENT</div>
           </div>
           <div className="details-col-2">
-            <div>
-              {offer.product_details.map((detail) => {
-                return detail.MARQUE && <div>{detail.MARQUE}</div>;
-              })}
-            </div>
-            <div>
-              {offer.product_details.map((detail) => {
-                return detail.TAILLE && <div>{detail.TAILLE}</div>;
-              })}
-            </div>
-            <div>
-              {offer.product_details.map((detail) => {
-                return detail.ÉTAT && <div>{detail.ÉTAT}</div>;
-              })}
-            </div>
-            <div>
-              {offer.product_details.map((detail) => {
-                return detail.COULEUR && <div>{detail.COULEUR}</div>;
-              })}
-            </div>
-            <div>
-              {offer.product_details.map((detail) => {
-                return detail.EMPLACEMENT && <div>{detail.EMPLACEMENT}</div>;
-              })}
-            </div>
+            <div>{offer.product_details[0].brand}</div>
+            <div>{offer.product_details[1].size}</div>
+            <div>{offer.product_details[2].condition}</div>
+            <div>{offer.product_details[3].color}</div>
+            <div>{offer.product_details[4].city}</div>
           </div>
         </div>
         <div className="offer-line-2">

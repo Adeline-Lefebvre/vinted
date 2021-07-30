@@ -2,22 +2,22 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Header from "./components/Header.js";
 import Home from "./containers/Home.js";
 import Offer from "./containers/Offer.js";
-import Header from "./components/Header.js";
+import Signup from "./containers/Signup.js";
+import Login from "./containers/Login.js";
 
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [id, setId] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
+          "https://vinted-react-by-adeline.herokuapp.com/offers"
         );
-        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -39,11 +39,11 @@ function App() {
         <Route path="/offer/:id" component={Offer}>
           <Offer data={data} />
         </Route>
+        <Route path="/user/signup" component={Signup} />
+        <Route path="/user/login" component={Login} />
       </Switch>
     </Router>
   );
 }
 
 export default App;
-
-//id={id} setId={setId}
