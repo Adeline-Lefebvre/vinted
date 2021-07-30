@@ -1,4 +1,5 @@
 import "./App.css";
+import "./responsive.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
