@@ -2,7 +2,7 @@ import "../App.css";
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, setUser }) => {
   return (
     <div className="header">
       <Link to="/" className="logo">
@@ -15,23 +15,44 @@ const Header = () => {
           type="text"
           placeholder="Rechercher des articles"
         />
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
       </div>
-      <Link to="/user/signup" style={{ margin: "auto 0" }}>
-        <button className="CTA-white" style={{ marginRight: "10px" }}>
-          s'inscrire
-        </button>
-      </Link>
-      <Link to="/user/login" style={{ margin: "auto 0" }}>
-        <button className="CTA-white">Se connecter</button>
-      </Link>
+      {token ? (
+        <div style={{ display: "flex" }}>
+          <Link
+            to="/"
+            className="CTA-white"
+            style={{ margin: "auto 10px" }}
+            onClick={() => setUser(null)}
+          >
+            Se déconnecter
+          </Link>
+        </div>
+      ) : (
+        <div style={{ display: "flex" }}>
+          <Link
+            to="/user/signup"
+            className="CTA-white"
+            style={{ margin: "auto 0", marginRight: "10px" }}
+          >
+            S'inscrire
+          </Link>
+          <Link
+            to="/user/login"
+            className="CTA-white"
+            style={{ margin: "auto 0" }}
+          >
+            Se connecter
+          </Link>
+        </div>
+      )}
 
       <button
         className="CTA-blue"
         style={{
           border: "none",
           fontSize: "12px",
-          lineHeight: "27px",
+          lineHeight: "25px",
           width: "120px",
           marginLeft: "10px",
         }}

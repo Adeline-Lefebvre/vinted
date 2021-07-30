@@ -2,9 +2,15 @@ import image1 from "../image1.jpeg";
 import image2 from "../image2.svg";
 import Content from "../components/Content.js";
 
-const Home = ({ data }) => {
+const Home = ({ data, welcomeMessage }) => {
   return (
     <div>
+      <div
+        className={welcomeMessage}
+        style={{ textAlign: "center", lineHeight: "50px", fontWeight: "bold" }}
+      >
+        {welcomeMessage}
+      </div>
       <div className="images">
         <img className="image1" src={image1} alt="" />
         <img className="image2" src={image2} alt="" />

@@ -2,11 +2,14 @@ import "../App.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setUser, setWelcomeMessage }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const history = useHistory();
 
   const url = "https://vinted-react-by-adeline.herokuapp.com/user/login";
   const data = {
@@ -15,12 +18,20 @@ const Login = () => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
     try {
-      const newUser = await axios.post(url, data);
-      Cookies.set("token", newUser.token);
+      event.preventDefault();
+      const response = await axios.post(url, data);
+      console.log(response);
+      if (response.data.token) {
+        setUser(response.data.token);
+        setWelcomeMessage(response.data.message);
+        history.push("/");
+      }
     } catch (error) {
       console.log(error.message);
+      if (error.response.status === 400) {
+        setErrorMessage(error.response.data.message);
+      }
     }
   };
 
@@ -42,16 +53,18 @@ const Login = () => {
             setPassword(event.target.value);
           }}
         />
-
+        <p style={{ color: "red", fontSize: "12px" }}>{errorMessage}</p>
         <button className="CTA-blue" type="submit">
           Se connecter
         </button>
-        <Link to="/user/signup" className="link">
-          <div className="link" style={{ fontSize: "12px" }}>
-            Pas encore de compte ? Inscris-toi !
-          </div>
-        </Link>
       </form>
+      <Link
+        to="/user/signup"
+        className="link"
+        style={{ fontSize: "12px", display: "block", margin: "20px auto" }}
+      >
+        Pas encore de compte ? Inscris-toi !
+      </Link>
     </div>
   );
 };

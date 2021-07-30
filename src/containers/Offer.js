@@ -11,7 +11,7 @@ const Offer = ({ data }) => {
         display: "flex",
         justifyContent: "space-around",
         backgroundColor: "#EBEDEE",
-        padding: "40px 100px 300px 100px",
+        padding: "40px 150px 120px 150px",
       }}
     >
       <img

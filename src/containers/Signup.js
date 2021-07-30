@@ -2,13 +2,16 @@ import "../App.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 
-const Signup = () => {
-  const [username, setUsername] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+const Signup = ({ setUser }) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const history = useHistory();
 
   const url = "https://vinted-react-by-adeline.herokuapp.com/user/signup";
   const data = {
@@ -21,10 +24,16 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const newUser = await axios.post(url, data);
-      Cookies.set("token", newUser.token);
+      const response = await axios.post(url, data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        history.push("/");
+      }
     } catch (error) {
       console.log(error.message);
+      if (error.response.status === 409) {
+        setErrorMessage(error.response.data.message);
+      }
     }
   };
 
@@ -46,6 +55,7 @@ const Signup = () => {
             setEmail(event.target.value);
           }}
         />
+
         <input
           type="password"
           placeholder="Mot de passe"
@@ -70,10 +80,12 @@ const Signup = () => {
             avoir au moins 18 ans.
           </p>
         </div>
+        <p style={{ color: "red", fontSize: "12px" }}>{errorMessage}</p>
 
         <button className="CTA-blue" type="submit">
           S'inscrire
         </button>
+
         <Link to="/user/login" className="link">
           <div className="link" style={{ fontSize: "12px" }}>
             Tu as déjà un compte ? Connecte-toi !
