@@ -23,7 +23,7 @@ function App() {
     priceMin: min,
     priceMax: max,
     sort: "price-asc",
-    skip: 0,
+    skip: 1,
     limit: 20,
   });
 
