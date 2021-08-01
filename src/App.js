@@ -23,8 +23,8 @@ function App() {
     priceMin: min,
     priceMax: max,
     sort: "price-asc",
-    skip: null,
-    limit: null,
+    skip: 0,
+    limit: 20,
   });
 
   const setUser = (token) => {

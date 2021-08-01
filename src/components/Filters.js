@@ -40,13 +40,23 @@ const Filters = ({ setQueries, queries, min, max }) => {
         setQueries={setQueries}
         queries={queries}
       />
+      <div>Produits par page :</div>
+      <select
+        name="products"
+        className="nb-products"
+        onChange={(event) => {
+          setQueries({ ...queries, limit: event.target.value });
+        }}
+      >
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+      </select>
     </div>
   );
 };
 
 export default Filters;
 
-// priceMin : Number
-// priceMax : Number
 // skip : Number
 // limit : Number

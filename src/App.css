@@ -131,7 +131,8 @@ input:focus {
 .content {
   display: flex;
   flex-wrap: wrap;
-  margin: 50px 100px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .content img {
@@ -231,10 +232,12 @@ input:focus {
 
 .filters {
   line-height: 50px;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  margin-top: 40px;
+  font-weight: bold;
 }
 
 .checkbox {
@@ -277,6 +280,7 @@ input:focus {
   position: relative;
   width: 200px;
   margin-left: 10px;
+  margin-right: 25px;
 }
 
 .slider__track,
@@ -363,4 +367,47 @@ input:focus {
 .slider__right-value {
   right: 6px;
   top: -56px;
+}
+
+.nb-products {
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--blue);
+  background-color: rgba(11, 174, 183, 0.1);
+  text-align: center;
+  border: none;
+  margin: auto 0;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 4px;
+  padding-right: 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+  align-items: center;
+}
+
+.arrow {
+  margin: 10px 10px;
+  border-radius: 50%;
+  background-color: white;
+  line-height: 26px;
+  width: 28px;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+  color: white;
 }

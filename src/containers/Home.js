@@ -1,7 +1,8 @@
 import image1 from "../image1.jpeg";
 import image2 from "../image2.svg";
-import Content from "../components/Content.js";
 import Filters from "../components/Filters.js";
+import Content from "../components/Content.js";
+import Page from "../components/Page.js";
 
 const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
   return (
@@ -12,7 +13,6 @@ const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
       >
         {welcomeMessage}
       </div>
-      <Filters setQueries={setQueries} queries={queries} min={min} max={max} />
 
       <div className="images">
         <img className="image1" src={image1} alt="" />
@@ -27,8 +27,9 @@ const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
           </a>
         </div>
       </div>
-
+      <Filters setQueries={setQueries} queries={queries} min={min} max={max} />
       <Content data={data} />
+      <Page setQueries={setQueries} queries={queries} data={data} />
     </div>
   );
 };
