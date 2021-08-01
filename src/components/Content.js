@@ -5,7 +5,7 @@ const Content = ({ data }) => {
   return (
     <div className="content">
       {data.offers.map((offer) => {
-        return <Item offer={offer} />;
+        return <Item offer={offer} key={offer._id} />;
       })}
     </div>
   );

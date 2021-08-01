@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Signup = ({ setUser }) => {
+const Signup = ({ setUser, setWelcomeMessage }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +27,7 @@ const Signup = ({ setUser }) => {
       const response = await axios.post(url, data);
       if (response.data.token) {
         setUser(response.data.token);
+        setWelcomeMessage(response.data.message);
         history.push("/");
       }
     } catch (error) {

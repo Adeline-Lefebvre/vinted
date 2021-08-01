@@ -2,7 +2,7 @@ import "../App.css";
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
 
-const Header = ({ token, setUser }) => {
+const Header = ({ token, setUser, queries, setQueries }) => {
   return (
     <div className="header">
       <Link to="/" className="logo">
@@ -14,6 +14,9 @@ const Header = ({ token, setUser }) => {
           className="searchInput"
           type="text"
           placeholder="Rechercher des articles"
+          onChange={(event) =>
+            setQueries({ ...queries, title: event.target.value })
+          }
         />
         <i className="fas fa-search"></i>
       </div>

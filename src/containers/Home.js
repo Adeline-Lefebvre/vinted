@@ -3,7 +3,7 @@ import image2 from "../image2.svg";
 import Content from "../components/Content.js";
 import Filters from "../components/Filters.js";
 
-const Home = ({ data, welcomeMessage }) => {
+const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
   return (
     <div>
       <div
@@ -12,7 +12,7 @@ const Home = ({ data, welcomeMessage }) => {
       >
         {welcomeMessage}
       </div>
-      <Filters />
+      <Filters setQueries={setQueries} queries={queries} min={min} max={max} />
 
       <div className="images">
         <img className="image1" src={image1} alt="" />
