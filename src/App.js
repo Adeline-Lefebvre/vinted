@@ -104,7 +104,7 @@ function App() {
           <Login setUser={setUser} setWelcomeMessage={setWelcomeMessage} />
         </Route>
         <Route path="/publish">
-          <Publish />
+          <Publish token={token} />
         </Route>
       </Switch>
     </Router>

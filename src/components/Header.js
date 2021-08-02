@@ -50,18 +50,19 @@ const Header = ({ token, setUser, queries, setQueries }) => {
         </div>
       )}
 
-      <button
+      <Link
+        to="/publish"
         className="CTA-blue"
         style={{
           border: "none",
           fontSize: "12px",
-          lineHeight: "25px",
+          lineHeight: "27px",
           width: "120px",
           marginLeft: "10px",
         }}
       >
         Vends maintenant
-      </button>
+      </Link>
     </div>
   );
 };

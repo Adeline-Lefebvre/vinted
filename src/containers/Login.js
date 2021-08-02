@@ -29,6 +29,7 @@ const Login = ({ setUser, setWelcomeMessage }) => {
       }
     } catch (error) {
       console.log(error.message);
+      console.log(error.response);
       if (error.response.status === 400) {
         setErrorMessage(error.response.data.message);
       }

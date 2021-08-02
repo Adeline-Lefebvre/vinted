@@ -3,13 +3,19 @@ import image2 from "../image2.svg";
 import Filters from "../components/Filters.js";
 import Content from "../components/Content.js";
 import Page from "../components/Page.js";
+import { Link } from "react-router-dom";
 
 const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
   return (
     <div>
       <div
         className={welcomeMessage}
-        style={{ textAlign: "center", lineHeight: "50px", fontWeight: "bold" }}
+        style={{
+          textAlign: "center",
+          lineHeight: "50px",
+          fontWeight: "bold",
+          fontSize: "16px",
+        }}
       >
         {welcomeMessage}
       </div>
@@ -19,9 +25,14 @@ const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
         <img className="image2" src={image2} alt="" />
         <div className="CTA">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
-          <div className="CTA-blue" style={{ marginBottom: "20px" }}>
-            Vends maintenant
-          </div>
+          <Link to="/publish">
+            <button
+              className="CTA-blue"
+              style={{ marginBottom: "20px", display: "block" }}
+            >
+              Vends maintenant
+            </button>
+          </Link>
           <a href="https://www.vinted.fr/how_it_works">
             Découvrir comment ça marche
           </a>
