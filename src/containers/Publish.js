@@ -3,11 +3,14 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [newOffer, setNewOffer] = useState({});
   const [picture, setPicture] = useState();
   const [errorMessage, setErrorMessage] = useState("");
+
+  const history = useHistory();
 
   const url = "https://vinted-react-by-adeline.herokuapp.com/offer/publish";
 
@@ -31,6 +34,7 @@ const Publish = ({ token }) => {
         },
       });
       console.log(response.data);
+      history.push("/");
     } catch (error) {
       console.log(error.message);
       if (error.response.status === 400) {
@@ -50,7 +54,7 @@ const Publish = ({ token }) => {
                 <div className="dashed-preview">
                   {picture ? (
                     <div className="preview-image">
-                      <img src={picture} alt="" />
+                      <img src={URL.createObjectURL(picture)} alt="" />
                       <i
                         className="fas fa-times"
                         onClick={() => {
@@ -66,9 +70,7 @@ const Publish = ({ token }) => {
                         accept="*"
                         type="file"
                         onChange={(event) => {
-                          setPicture(
-                            URL.createObjectURL(event.target.files[0])
-                          );
+                          setPicture(event.target.files[0]);
                         }}
                       />
                       <label htmlFor="files" className="add-picture">
