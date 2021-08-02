@@ -1,5 +1,5 @@
-import "../App.css";
-import PriceRange from "./PriceRange.js";
+import "./index.css";
+import PriceRange from "../PriceRange/PriceRange.js";
 
 const Filters = ({ setQueries, queries, min, max }) => {
   const handleSetQueries = () => {

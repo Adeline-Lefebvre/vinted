@@ -1,3 +1,4 @@
+import "./index.css";
 import { useParams } from "react-router-dom";
 
 const Offer = ({ data }) => {
@@ -6,14 +7,7 @@ const Offer = ({ data }) => {
   const offer = data.offers.find((elem) => elem._id === id);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        backgroundColor: "#EBEDEE",
-        padding: "40px 150px 120px 150px",
-      }}
-    >
+    <div className="offer">
       <img
         src={offer.product_image.secure_url}
         alt=""

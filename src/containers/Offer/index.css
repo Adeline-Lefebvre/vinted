@@ -1,0 +1,47 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.offer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ebedee;
+  padding: 40px 150px 120px 150px;
+}
+
+.offer > img {
+  object-fit: scale-down;
+}
+
+.offer-details {
+  display: flex;
+  width: 300px;
+}
+
+.itemInfos {
+  background-color: white;
+  padding: 40px;
+}
+
+.details-titles {
+  color: #999999;
+  font-size: 14px;
+}
+
+.details-col-2 {
+  margin-left: 50px;
+  font-size: 14px;
+}
+
+.offer-details {
+  padding-bottom: 50px;
+  border-bottom: #999999 solid 1px;
+}
+
+.offer-line-2 {
+  margin: 50px 0;
+}
+
+.acheter {
+  width: 100%;
+}

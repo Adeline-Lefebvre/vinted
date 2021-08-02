@@ -4,13 +4,14 @@ import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Header from "./components/Header.js";
-import Home from "./containers/Home.js";
-import Offer from "./containers/Offer.js";
-import Signup from "./containers/Signup.js";
-import Login from "./containers/Login.js";
+import Header from "./components/Header/Header.js";
+import Home from "./containers/Home/Home.js";
+import Offer from "./containers/Offer/Offer.js";
+import Signup from "./containers/Signup/Signup.js";
+import Login from "./containers/Login/Login.js";
 import Cookies from "js-cookie";
-import Publish from "./containers/Publish.js";
+import Publish from "./containers/Publish/Publish.js";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
   const [data, setData] = useState([]);
@@ -107,6 +108,7 @@ function App() {
           <Publish token={token} />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

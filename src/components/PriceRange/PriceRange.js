@@ -1,4 +1,4 @@
-import "../App.css";
+import "./index.css";
 import { useRef } from "react";
 import { useCallback, useEffect } from "react";
 

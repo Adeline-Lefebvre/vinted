@@ -1,0 +1,30 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+  align-items: center;
+}
+
+.arrow {
+  margin: 10px 10px;
+  border-radius: 50%;
+  background-color: white;
+  line-height: 26px;
+  width: 28px;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+  color: white;
+}

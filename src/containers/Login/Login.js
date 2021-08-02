@@ -1,4 +1,4 @@
-import "../App.css";
+import "./index.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -25,6 +25,7 @@ const Login = ({ setUser, setWelcomeMessage }) => {
       if (response.data.token) {
         setUser(response.data.token);
         setWelcomeMessage(response.data.message);
+
         history.push("/");
       }
     } catch (error) {
@@ -38,7 +39,7 @@ const Login = ({ setUser, setWelcomeMessage }) => {
 
   return (
     <div>
-      <h1 style={{ margin: "50px auto", textAlign: "center" }}>Se connecter</h1>
+      <h1 className="title">Se connecter</h1>
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -54,10 +55,8 @@ const Login = ({ setUser, setWelcomeMessage }) => {
             setPassword(event.target.value);
           }}
         />
-        <p style={{ color: "red", fontSize: "12px" }}>{errorMessage}</p>
-        <button className="CTA-blue" type="submit">
-          Se connecter
-        </button>
+        <p className="errorMessage">{errorMessage}</p>
+        <button type="submit">Se connecter</button>
       </form>
       <Link
         to="/user/signup"

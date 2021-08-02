@@ -1,0 +1,54 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.header {
+  height: 50px;
+  border-bottom: lightgray solid 1px;
+  background-color: white;
+  padding: 0 100px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+
+.logo {
+  height: 30px;
+  margin: auto 0;
+}
+
+.searchBar {
+  margin: 8px 45px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 60%;
+}
+
+.searchInput {
+  font-size: 17px;
+  line-height: 32px;
+  width: 100%;
+  color: gray;
+  padding-left: 40px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: none;
+  background-color: #f5f6f7;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.searchBar > i {
+  font-size: 15px;
+  color: rgb(185, 185, 185);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}

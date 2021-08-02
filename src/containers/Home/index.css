@@ -1,0 +1,68 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.welcomeMessage {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.sub-header {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.sub-header > .image1 {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+.sub-header > .image2 {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.headline {
+  position: absolute;
+  top: 136px;
+  left: 100px;
+  width: 400px;
+  height: 258px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 32px;
+  box-sizing: border-box;
+  border: lightgray solid 1px;
+}
+
+.headline > a {
+  color: var(--blue);
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+}
+
+.headline > button {
+  color: white;
+  background-color: var(--blue);
+  line-height: 44px;
+  text-align: center;
+  width: 164px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: auto 0;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

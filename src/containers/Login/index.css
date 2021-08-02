@@ -1,0 +1,54 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.title {
+  font-size: 28px;
+  padding: 40px;
+  text-align: center;
+  background-color: pink;
+}
+
+.form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
+
+.form > input {
+  margin-bottom: 30px;
+  line-height: 40px;
+  font-size: 16px;
+  border: none;
+}
+
+.form > input {
+  border-bottom: pink solid 1px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
+
+.form > button {
+  width: 100%;
+  color: white;
+  background-color: var(--blue);
+  line-height: 44px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.link {
+  font-size: 10px;
+  color: var(--blue);
+  text-align: center;
+  text-decoration: none;
+  margin: 20px auto;
+}

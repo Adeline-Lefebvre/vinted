@@ -1,0 +1,29 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.footer {
+  border-top: rgb(231, 231, 231) solid 1px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.footer > span {
+  font-weight: bold;
+}
+
+.footer > a {
+  background-color: rgba(11, 174, 183, 0.1);
+  color: var(--blue);
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.footer > a:hover {
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+}

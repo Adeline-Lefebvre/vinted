@@ -1,0 +1,67 @@
+:root {
+  --blue: #0baeb7;
+}
+
+.filters {
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 40px auto 0 auto;
+  font-weight: bold;
+  padding-bottom: 30px;
+  border-bottom: rgb(231, 231, 231) solid 1px;
+}
+
+.checkbox {
+  margin-right: 25px;
+}
+
+.checkbox .wrap {
+  background-color: #2cb1ba;
+  border-radius: 10px;
+  width: 42px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.checkbox .knob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid var(--blue);
+  border-radius: 100%;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transition: left 0.1s ease-in-out 0s;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 22px;
+}
+
+.nb-products {
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--blue);
+  background-color: rgba(11, 174, 183, 0.1);
+  text-align: center;
+  border: none;
+  margin: auto 0;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 4px;
+  padding-right: 8px;
+  border-radius: 4px;
+  outline: none;
+}

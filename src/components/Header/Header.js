@@ -1,5 +1,5 @@
-import "../App.css";
-import logo from "../logo.png";
+import "./index.css";
+import logo from "../../logo.png";
 import { Link } from "react-router-dom";
 
 const Header = ({ token, setUser, queries, setQueries }) => {

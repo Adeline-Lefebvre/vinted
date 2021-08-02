@@ -1,5 +1,5 @@
-import "../App.css";
-import Item from "./Item.js";
+import "./index.css";
+import Item from "../Item/Item.js";
 
 const Content = ({ data }) => {
   return (
