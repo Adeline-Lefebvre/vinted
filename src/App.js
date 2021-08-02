@@ -10,6 +10,7 @@ import Offer from "./containers/Offer.js";
 import Signup from "./containers/Signup.js";
 import Login from "./containers/Login.js";
 import Cookies from "js-cookie";
+import Publish from "./containers/Publish.js";
 
 function App() {
   const [data, setData] = useState([]);
@@ -101,6 +102,9 @@ function App() {
         </Route>
         <Route path="/user/login">
           <Login setUser={setUser} setWelcomeMessage={setWelcomeMessage} />
+        </Route>
+        <Route path="/publish">
+          <Publish />
         </Route>
       </Switch>
     </Router>
