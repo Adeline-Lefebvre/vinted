@@ -39,7 +39,7 @@ const Login = ({ setUser, setWelcomeMessage }) => {
 
   return (
     <div>
-      <h1 className="title">Se connecter</h1>
+      <div className="title">Se connecter</div>
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -58,11 +58,7 @@ const Login = ({ setUser, setWelcomeMessage }) => {
         <p className="errorMessage">{errorMessage}</p>
         <button type="submit">Se connecter</button>
       </form>
-      <Link
-        to="/user/signup"
-        className="link"
-        style={{ fontSize: "12px", display: "block", margin: "20px auto" }}
-      >
+      <Link to="/user/signup" className="link-subscribe">
         Pas encore de compte ? Inscris-toi !
       </Link>
     </div>
