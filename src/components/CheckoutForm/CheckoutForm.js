@@ -11,7 +11,7 @@ const CheckoutForm = ({ offer }) => {
   console.log(offer);
 
   const total = Number(offer.product_price) + 1.2;
-  total.toFixed(2);
+  total = total.toFixed(2);
 
   const [completed, setCompleted] = useState(false);
 
