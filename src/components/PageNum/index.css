@@ -1,8 +1,4 @@
-:root {
-  --blue: #0baeb7;
-}
-
-.pages {
+.page-num {
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -12,8 +8,8 @@
   align-items: center;
 }
 
-.arrow {
-  margin: 10px 10px;
+.page-num-arrow {
+  margin: 0 10px;
   border-radius: 50%;
   background-color: white;
   line-height: 26px;
@@ -23,7 +19,11 @@
   text-align: center;
 }
 
-.arrow:hover {
+.hidden {
+  visibility: hidden;
+}
+
+.page-num-arrow:hover {
   cursor: pointer;
   background-color: var(--blue);
   color: white;

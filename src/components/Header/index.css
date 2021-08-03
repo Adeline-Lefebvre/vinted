@@ -1,7 +1,3 @@
-:root {
-  --blue: #0baeb7;
-}
-
 .header {
   height: 50px;
   border-bottom: lightgray solid 1px;
@@ -26,7 +22,7 @@
   width: 60%;
 }
 
-.searchInput {
+.searchBar > input {
   font-size: 17px;
   line-height: 32px;
   width: 100%;
@@ -41,14 +37,37 @@
   left: 0;
 }
 
-input:focus {
-  outline: none;
-}
-
 .searchBar > i {
   font-size: 15px;
   color: rgb(185, 185, 185);
   position: absolute;
   top: 10px;
   left: 15px;
+}
+
+.CTA-white {
+  font-size: 12px;
+  line-height: 25px;
+  width: 100px;
+  color: var(--blue);
+  text-align: center;
+  border-radius: 5px;
+  border: var(--blue) solid 1px;
+  background-color: white;
+  margin: auto 10px auto 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.CTA-blue-small {
+  color: white;
+  background-color: var(--blue);
+  line-height: 27px;
+  text-align: center;
+  width: 130px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: auto 0;
+  cursor: pointer;
 }

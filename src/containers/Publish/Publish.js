@@ -93,7 +93,8 @@ const Publish = ({ token }) => {
                 </div>
                 <div className="publish-inputs">
                   <p>Décris ton article</p>
-                  <input
+                  <textarea
+                    rows="4"
                     type="text"
                     placeholder="Porté quelques fois, taille correctement"
                     onChange={(event) => {
@@ -179,7 +180,7 @@ const Publish = ({ token }) => {
                   </div>
                 </div>
               </div>
-              <p style={{ color: "red", fontSize: "12px" }}>{errorMessage}</p>
+              <p className="errorMessage">{errorMessage}</p>
               <div className="publish-add-button">
                 <button type="submit">Ajouter</button>
               </div>

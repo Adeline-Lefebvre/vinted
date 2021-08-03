@@ -1,35 +1,24 @@
-:root {
-  --blue: #0baeb7;
-}
-
-.user {
+.item-user {
   display: flex;
   align-items: center;
   margin: 20px 0 10px 0;
 }
 
-.user > img {
+.item-user > img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.username {
+.item-username {
   color: gray;
   font-size: 14px;
   line-height: 20px;
   margin-left: 10px;
 }
 
-.price {
-  font-size: 14px;
-  color: black;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.picture {
+.item-picture {
   height: 339px;
   width: 235px;
   margin-right: 24px;
@@ -38,9 +27,27 @@
   background-color: #f1f1f3;
 }
 
-.picture > img {
+.item-picture > img {
   object-fit: scale-down;
   width: 235px;
   max-height: 339px;
   cursor: pointer;
+}
+
+.item-price {
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.item-size {
+  color: gray;
+  font-size: 12px;
+}
+
+.item-brand {
+  color: gray;
+  font-size: 12px;
+  margin-bottom: 10px;
 }

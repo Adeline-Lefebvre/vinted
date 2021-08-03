@@ -16,7 +16,7 @@ const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
         <div className="headline">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
           <Link to="/publish">
-            <button className="CTA-blue">Vends maintenant</button>
+            <button className="CTA-blue-big">Vends maintenant</button>
           </Link>
           <a href="https://www.vinted.fr/how_it_works">
             Découvrir comment ça marche

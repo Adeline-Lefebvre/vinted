@@ -1,25 +1,26 @@
-:root {
-  --blue: #0baeb7;
-}
-
 .filters {
-  line-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
   margin: 40px auto 0 auto;
-  font-weight: bold;
   padding-bottom: 30px;
   border-bottom: rgb(231, 231, 231) solid 1px;
 }
 
-.checkbox {
+.filters-title {
+  margin-right: 10px;
+  font-weight: bold;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+.filters-checkbox {
   margin-right: 25px;
 }
 
-.checkbox .wrap {
-  background-color: #2cb1ba;
+.filters-checkbox .wrap {
+  background-color: var(--blue);
   border-radius: 10px;
   width: 42px;
   height: 20px;
@@ -29,7 +30,7 @@
   outline: none;
 }
 
-.checkbox .knob {
+.filters-checkbox .knob {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -12,30 +12,11 @@ h1 {
   font-weight: 400 !important;
 }
 
-.CTA-blue {
-  color: white;
-  background-color: var(--blue);
-  line-height: 44px;
-  text-align: center;
-  width: 164px;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  margin: auto 0;
-  cursor: pointer;
+input:focus,
+textarea:focus {
+  outline: none;
 }
 
-.CTA-white {
-  font-size: 12px;
-  line-height: 25px;
-  width: 100px;
-  color: var(--blue);
-  text-align: center;
-  border-radius: 5px;
-  border: var(--blue) solid 1px;
-  background-color: white;
-  margin: auto 0;
-  cursor: pointer;
-  text-decoration: none;
+::placeholder {
+  color: lightgray;
 }

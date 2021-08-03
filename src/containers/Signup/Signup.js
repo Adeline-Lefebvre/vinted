@@ -40,7 +40,7 @@ const Signup = ({ setUser, setWelcomeMessage }) => {
 
   return (
     <div>
-      <h1 style={{ margin: "50px auto", textAlign: "center" }}>S'inscrire</h1>
+      <div className="title">S'inscrire</div>
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -64,33 +64,25 @@ const Signup = ({ setUser, setWelcomeMessage }) => {
             setPassword(event.target.value);
           }}
         />
-        <div>
+        <div className="checkbox">
           <input
-            className="checkbox"
             type="checkbox"
-            name=""
-            id=""
             onChange={(event) => {
               setNewsletter(true);
             }}
           />
-          <span style={{ color: "gray", marginLeft: "10px" }}>
-            S'inscrire à notre newsletter
-          </span>
-          <p className="conditions-checkbox">
-            En m'inscrivant je confirme avoir lu et accepté les Termes,
-            Conditions et Politique de Confidentialité de Vinted. Je confirme
-            avoir au moins 18 ans.
-          </p>
+          <span>S'inscrire à notre newsletter</span>
         </div>
-        <p style={{ color: "red", fontSize: "12px" }}>{errorMessage}</p>
+        <p className="conditions">
+          En m'inscrivant je confirme avoir lu et accepté les Termes, Conditions
+          et Politique de Confidentialité de Vinted. Je confirme avoir au moins
+          18 ans.
+        </p>
+        <p className="errorMessage">{errorMessage}</p>
+        <button type="submit">S'inscrire</button>
 
-        <button className="CTA-blue" type="submit">
-          S'inscrire
-        </button>
-
-        <Link to="/user/login" className="link">
-          <div className="link" style={{ fontSize: "12px" }}>
+        <Link to="/user/login" className="link-login">
+          <div className="link-login">
             Tu as déjà un compte ? Connecte-toi !
           </div>
         </Link>

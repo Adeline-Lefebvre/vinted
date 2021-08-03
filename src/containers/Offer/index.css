@@ -1,7 +1,3 @@
-:root {
-  --blue: #0baeb7;
-}
-
 .offer {
   display: flex;
   justify-content: space-around;
@@ -11,37 +7,57 @@
 
 .offer > img {
   object-fit: scale-down;
+  width: 400px;
 }
 
-.offer-details {
+.infos {
+  background-color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infos-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.infos-details {
   display: flex;
   width: 300px;
 }
 
-.itemInfos {
-  background-color: white;
-  padding: 40px;
-}
-
-.details-titles {
+.infos-details-titles {
   color: #999999;
   font-size: 14px;
 }
 
-.details-col-2 {
+.infos-details-col-2 {
   margin-left: 50px;
   font-size: 14px;
 }
 
-.offer-details {
-  padding-bottom: 50px;
-  border-bottom: #999999 solid 1px;
+.infos-product-name {
+  font-weight: bold;
+  margin-top: 50px;
 }
 
-.offer-line-2 {
-  margin: 50px 0;
+.infos-description {
+  color: gray;
+  max-width: 300px;
 }
 
-.acheter {
+.infos-CTA-buy {
+  color: white;
+  background-color: var(--blue);
+  line-height: 44px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
   width: 100%;
+  margin-top: 50px;
 }

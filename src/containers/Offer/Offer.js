@@ -1,5 +1,6 @@
 import "./index.css";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Offer = ({ data }) => {
   const { id } = useParams();
@@ -8,26 +9,18 @@ const Offer = ({ data }) => {
 
   return (
     <div className="offer">
-      <img
-        src={offer.product_image.secure_url}
-        alt=""
-        style={{ width: "400px" }}
-      />
-      <div className="itemInfos">
-        <div
-          style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "15px" }}
-        >
-          {offer.product_price.toFixed(2)} €
-        </div>
-        <div className="offer-details">
-          <div className="details-titles">
+      <img src={offer.product_image.secure_url} alt="" />
+      <div className="infos">
+        <div className="infos-price">{offer.product_price.toFixed(2)} €</div>
+        <div className="infos-details">
+          <div className="infos-details-titles">
             <div>MARQUE</div>
             <div>TAILLE</div>
             <div>ETAT</div>
             <div>COULEUR</div>
             <div>EMPLACEMENT</div>
           </div>
-          <div className="details-col-2">
+          <div className="infos-details-col-2">
             <div>{offer.product_details[0].brand}</div>
             <div>{offer.product_details[1].size}</div>
             <div>{offer.product_details[2].condition}</div>
@@ -35,14 +28,12 @@ const Offer = ({ data }) => {
             <div>{offer.product_details[4].city}</div>
           </div>
         </div>
-        <div className="offer-line-2">
-          <div style={{ fontWeight: "bold" }}>{offer.product_name}</div>
-          <div style={{ color: "gray", margin: "15px 0", maxWidth: "300px" }}>
-            {offer.product_description}
-          </div>
-          <div>{offer.owner.account.username}</div>
-        </div>
-        <div className="CTA-blue acheter">Acheter</div>
+        <div className="infos-product-name">{offer.product_name}</div>
+        <div className="infos-description">{offer.product_description}</div>
+        <div>{offer.owner.account.username}</div>
+        <Link to="/">
+          <div className="infos-CTA-buy">Acheter</div>
+        </Link>
       </div>
     </div>
   );

@@ -4,10 +4,10 @@ const Page = ({ queries, setQueries, data }) => {
   const totalPages = Math.ceil(data.count / queries.limit);
 
   return (
-    <div className="pages">
+    <div className="page-num">
       {queries.skip > 1 ? (
         <button
-          className="arrow"
+          className="page-num-arrow"
           onClick={() => {
             setQueries({ ...queries, skip: queries.skip - 1 });
           }}
@@ -15,14 +15,14 @@ const Page = ({ queries, setQueries, data }) => {
           <i className="fas fa-chevron-left"></i>
         </button>
       ) : (
-        <div className="arrow" style={{ visibility: "hidden" }}></div>
+        <div className="page-num-arrow hidden"></div>
       )}
       <div>
         Page {queries.skip} sur {totalPages}
       </div>
       {queries.skip < totalPages ? (
         <button
-          className="arrow"
+          className="page-num-arrow"
           onClick={() => {
             setQueries({ ...queries, skip: queries.skip + 1 });
           }}
@@ -30,7 +30,7 @@ const Page = ({ queries, setQueries, data }) => {
           <i className="fas fa-chevron-right"></i>
         </button>
       ) : (
-        <div className="arrow" style={{ visibility: "hidden" }}></div>
+        <div className="page-num-arrow hidden"></div>
       )}
     </div>
   );

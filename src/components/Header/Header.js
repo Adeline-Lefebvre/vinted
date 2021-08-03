@@ -11,7 +11,6 @@ const Header = ({ token, setUser, queries, setQueries }) => {
 
       <div className="searchBar">
         <input
-          className="searchInput"
           type="text"
           placeholder="Rechercher des articles"
           onChange={(event) =>
@@ -22,45 +21,22 @@ const Header = ({ token, setUser, queries, setQueries }) => {
       </div>
       {token ? (
         <div style={{ display: "flex" }}>
-          <Link
-            to="/"
-            className="CTA-white"
-            style={{ margin: "auto 10px" }}
-            onClick={() => setUser(null)}
-          >
+          <Link to="/" className="CTA-white" onClick={() => setUser(null)}>
             Se déconnecter
           </Link>
         </div>
       ) : (
         <div style={{ display: "flex" }}>
-          <Link
-            to="/user/signup"
-            className="CTA-white"
-            style={{ margin: "auto 0", marginRight: "10px" }}
-          >
+          <Link to="/user/signup" className="CTA-white">
             S'inscrire
           </Link>
-          <Link
-            to="/user/login"
-            className="CTA-white"
-            style={{ margin: "auto 0" }}
-          >
+          <Link to="/user/login" className="CTA-white">
             Se connecter
           </Link>
         </div>
       )}
 
-      <Link
-        to="/publish"
-        className="CTA-blue"
-        style={{
-          border: "none",
-          fontSize: "12px",
-          lineHeight: "27px",
-          width: "120px",
-          marginLeft: "10px",
-        }}
-      >
+      <Link to="/publish" className="CTA-blue-small">
         Vends maintenant
       </Link>
     </div>

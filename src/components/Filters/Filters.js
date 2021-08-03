@@ -12,8 +12,8 @@ const Filters = ({ setQueries, queries, min, max }) => {
 
   return (
     <div className="filters">
-      <div style={{ marginRight: "10px" }}>Trier par prix :</div>
-      <div className="checkbox">
+      <div className="filters-title">Trier par prix :</div>
+      <div className="filters-checkbox">
         <div
           className="wrap"
           onClick={() => {
@@ -33,14 +33,14 @@ const Filters = ({ setQueries, queries, min, max }) => {
           </div>
         </div>
       </div>
-      <div>Prix entre :</div>
+      <div className="filters-title">Prix entre :</div>
       <PriceRange
         min={min}
         max={max}
         setQueries={setQueries}
         queries={queries}
       />
-      <div>Produits par page :</div>
+      <div className="filters-title">Produits par page :</div>
       <select
         name="products"
         className="nb-products"
@@ -57,6 +57,3 @@ const Filters = ({ setQueries, queries, min, max }) => {
 };
 
 export default Filters;
-
-// skip : Number
-// limit : Number
