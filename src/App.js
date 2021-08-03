@@ -12,6 +12,7 @@ import Login from "./containers/Login/Login.js";
 import Cookies from "js-cookie";
 import Publish from "./containers/Publish/Publish.js";
 import Footer from "./components/Footer/Footer.js";
+import Payment from "./containers/Payment/Payment.js";
 
 function App() {
   const [data, setData] = useState([]);
@@ -106,6 +107,9 @@ function App() {
         </Route>
         <Route path="/publish">
           <Publish token={token} />
+        </Route>
+        <Route path="/payment">
+          <Payment token={token} />
         </Route>
       </Switch>
       <Footer />

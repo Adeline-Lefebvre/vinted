@@ -1,17 +1,20 @@
 import "./index.css";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Offer = ({ data }) => {
   const { id } = useParams();
 
+  const history = useHistory();
+
   const offer = data.offers.find((elem) => elem._id === id);
+  const price = offer.product_price.toFixed(2);
 
   return (
     <div className="offer">
       <img src={offer.product_image.secure_url} alt="" />
       <div className="infos">
-        <div className="infos-price">{offer.product_price.toFixed(2)} €</div>
+        <div className="infos-price">{price} €</div>
         <div className="infos-details">
           <div className="infos-details-titles">
             <div>MARQUE</div>
@@ -36,9 +39,16 @@ const Offer = ({ data }) => {
           )}
           <div>{offer.owner.account.username}</div>
         </div>
-        <Link to="/">
-          <div className="infos-CTA-buy">Acheter</div>
-        </Link>
+        <button
+          className="infos-CTA-buy"
+          onClick={() =>
+            history.push("/payment", {
+              title: offer.product_name,
+            })
+          }
+        >
+          Acheter
+        </button>
       </div>
     </div>
   );

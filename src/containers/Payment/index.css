@@ -1,0 +1,6 @@
+.payment {
+  background-color: #ebedee;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 100px 0;
+}
