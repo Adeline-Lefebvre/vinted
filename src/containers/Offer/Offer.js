@@ -30,7 +30,12 @@ const Offer = ({ data }) => {
         </div>
         <div className="infos-product-name">{offer.product_name}</div>
         <div className="infos-description">{offer.product_description}</div>
-        <div>{offer.owner.account.username}</div>
+        <div className="infos-user">
+          {offer.owner.account.avatar && (
+            <img src={offer.owner.account.avatar.secure_url} alt="" />
+          )}
+          <div>{offer.owner.account.username}</div>
+        </div>
         <Link to="/">
           <div className="infos-CTA-buy">Acheter</div>
         </Link>

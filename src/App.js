@@ -18,8 +18,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [welcomeMessage, setWelcomeMessage] = useState("");
-  const min = 0;
-  const max = 200;
+  const min = 0; // Prix minimum du composant PriceRange
+  const max = 200; // Prix maximum du composant PriceRange
   const [queries, setQueries] = useState({
     title: null,
     priceMin: min,

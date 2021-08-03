@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   background-color: #ebedee;
-  padding: 40px 150px 120px 150px;
+  padding: 80px 150px 120px 150px;
 }
 
 .offer > img {
@@ -47,6 +47,20 @@
 .infos-description {
   color: gray;
   max-width: 300px;
+  margin: 20px 0;
+}
+
+.infos-user {
+  display: flex;
+  align-items: center;
+}
+
+.infos-user > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .infos-CTA-buy {
