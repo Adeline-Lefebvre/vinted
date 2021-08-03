@@ -7,34 +7,34 @@ import axios from "axios";
 const CheckoutForm = ({ offer }) => {
   const stripe = useStripe();
   const elements = useElements();
-
-  console.log(offer);
-
   const total = Number(offer.product_price) + 1.2;
   total = total.toFixed(2);
 
   const [completed, setCompleted] = useState(false);
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const cardElement = elements.getElement(CardElement);
-    const stripeResponse = await stripe.createToken(cardElement, {
-      name: "L'id de l'acheteur",
-    });
-    console.log(stripeResponse);
-    const stripeToken = stripeResponse.token.id;
-    const response = await axios.post(
-      "https://vinted-react-by-adeline.herokuapp.com/payment",
-      {
-        stripeToken: stripeToken,
-        amount: total,
-        title: offer.product_name,
+    try {
+      event.preventDefault();
+      const cardElement = elements.getElement(CardElement);
+      const stripeResponse = await stripe.createToken(cardElement, {
+        name: "L'id de l'acheteur",
+      });
+      console.log(stripeResponse);
+      const stripeToken = stripeResponse.token.id;
+      const response = await axios.post(
+        "https://vinted-react-by-adeline.herokuapp.com/payment",
+        {
+          stripeToken: stripeToken,
+          amount: total,
+          title: offer.product_name,
+        }
+      );
+      console.log(response.data);
+      if (response.data.status === "succeeded") {
+        setCompleted(true);
       }
-    );
-
-    console.log(response.data);
-    if (response.data.status === "succeeded") {
-      setCompleted(true);
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
