@@ -1,6 +1,7 @@
 import "./index.css";
-import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm.js";
 import { Redirect } from "react-router-dom";
 import React from "react";

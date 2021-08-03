@@ -7,7 +7,7 @@ import axios from "axios";
 const CheckoutForm = ({ offer }) => {
   const stripe = useStripe();
   const elements = useElements();
-  const total = Number(offer.product_price) + 1.2;
+  let total = Number(offer.product_price) + 1.2;
   total = total.toFixed(2);
 
   const [completed, setCompleted] = useState(false);
