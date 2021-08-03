@@ -4,10 +4,14 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 import axios from "axios";
 
-const CheckoutForm = ({ title }) => {
+const CheckoutForm = ({ offer }) => {
   const stripe = useStripe();
   const elements = useElements();
-  // const total = Number(offer.product_price) + 1.2;
+
+  console.log(offer);
+
+  const total = Number(offer.product_price) + 1.2;
+  total.toFixed(2);
 
   const [completed, setCompleted] = useState(false);
 
@@ -22,9 +26,12 @@ const CheckoutForm = ({ title }) => {
     const response = await axios.post(
       "https://vinted-react-by-adeline.herokuapp.com/payment",
       {
-        stripeToken,
+        stripeToken: stripeToken,
+        amount: total,
+        title: offer.product_name,
       }
     );
+
     console.log(response.data);
     if (response.data.status === "succeeded") {
       setCompleted(true);
@@ -39,7 +46,7 @@ const CheckoutForm = ({ title }) => {
           <div className="checkoutform-fees">
             <div className="checkoutform-fee">
               <div>Commande</div>
-              <div>offer.product_price €</div>
+              <div>{offer.product_price} €</div>
             </div>
             <div className="checkoutform-fee">
               <div>Frais protection acheteurs</div>
@@ -54,12 +61,13 @@ const CheckoutForm = ({ title }) => {
           <div>
             <div className="checkoutform-total">
               <div>Total</div>
-              <div>total €</div>
+              <div>{total} €</div>
             </div>
             <div className="checkoutform-last-step">
               Il ne vous reste plus qu'une étape pour vous offrir
-              <span> {title}</span>. Vous allez payer total € (frais de
-              protection et frais de port inclus).
+              <span> {offer.product_name}</span>. Vous allez payer
+              <span> {total}</span> € (frais de protection et frais de port
+              inclus).
             </div>
           </div>
 

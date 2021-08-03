@@ -2,7 +2,6 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ offer }) => {
-  console.log(offer);
   return (
     <Link to={`/offer/${offer._id}`}>
       <div>

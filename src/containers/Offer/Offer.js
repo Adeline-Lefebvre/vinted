@@ -2,7 +2,7 @@ import "./index.css";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Offer = ({ data }) => {
+const Offer = ({ data, setOffer }) => {
   const { id } = useParams();
 
   const history = useHistory();
@@ -41,11 +41,10 @@ const Offer = ({ data }) => {
         </div>
         <button
           className="infos-CTA-buy"
-          onClick={() =>
-            history.push("/payment", {
-              title: offer.product_name,
-            })
-          }
+          onClick={() => {
+            setOffer(offer);
+            history.push("/payment");
+          }}
         >
           Acheter
         </button>
