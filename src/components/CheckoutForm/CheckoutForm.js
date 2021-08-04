@@ -7,6 +7,7 @@ import axios from "axios";
 const CheckoutForm = ({ product_name, product_price }) => {
   const stripe = useStripe();
   const elements = useElements();
+
   let total = Number(product_price) + 1.2;
   total = total.toFixed(2);
 
@@ -17,6 +18,7 @@ const CheckoutForm = ({ product_name, product_price }) => {
       event.preventDefault();
       const cardElement = elements.getElement(CardElement);
       const stripeResponse = await stripe.createToken(cardElement, {
+        // créer un cookie avec l'id pour pouvoir le récup
         name: "L'id de l'acheteur",
       });
       console.log(stripeResponse);

@@ -6,10 +6,11 @@ import { Redirect } from "react-router-dom";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
+const stripePromise = loadStripe(
+  "pk_test_51JKJuRGGHRuiYP3jZRhzSOiru4n3ChQhWlLVZ1AWK4ATkUXn6Rxp9lmyec1S31jNdv9J4oVwRSz7TL9JeUPa94uR005lEK1bTB"
+);
+
 const Payment = ({ token }) => {
-  const stripePromise = loadStripe(
-    "pk_test_51JKJuRGGHRuiYP3jZRhzSOiru4n3ChQhWlLVZ1AWK4ATkUXn6Rxp9lmyec1S31jNdv9J4oVwRSz7TL9JeUPa94uR005lEK1bTB"
-  );
   const location = useLocation();
   const { product_name, product_price } = location.state.offer;
 
