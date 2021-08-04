@@ -1,8 +1,8 @@
 import "./index.css";
 import { useState } from "react";
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-
 import axios from "axios";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { Link } from "react-router-dom";
 
 const CheckoutForm = ({ product_name, product_price }) => {
   const stripe = useStripe();
@@ -32,9 +32,7 @@ const CheckoutForm = ({ product_name, product_price }) => {
         }
       );
       console.log(response.data);
-      if (response.data.status === "succeeded") {
-        setCompleted(true);
-      }
+      setCompleted(true);
     } catch (error) {
       console.log(error.message);
     }
@@ -75,13 +73,16 @@ const CheckoutForm = ({ product_name, product_price }) => {
 
           <form onSubmit={handleSubmit}>
             <CardElement className="cardelement" />
-            <button type="submit" className="CTA-pay">
-              Payer
-            </button>
+            <input type="submit" className="CTA-pay" value="Payer" />
           </form>
         </div>
       ) : (
-        <span>Paiement effectué ! </span>
+        <div>
+          <div className="payment-succeed">✨ Paiement effectué ! ✨</div>
+          <Link to="/" className="link-homepage">
+            Retourner à la page d'accueil
+          </Link>
+        </div>
       )}
     </div>
   );

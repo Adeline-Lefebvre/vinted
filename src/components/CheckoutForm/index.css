@@ -60,3 +60,20 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+.payment-succeed {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.link-homepage {
+  font-size: 14px;
+  display: block;
+  color: var(--blue);
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 50px;
+}
