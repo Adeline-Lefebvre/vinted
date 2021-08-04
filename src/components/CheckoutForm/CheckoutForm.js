@@ -4,10 +4,10 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 import axios from "axios";
 
-const CheckoutForm = ({ offer }) => {
+const CheckoutForm = ({ product_name, product_price }) => {
   const stripe = useStripe();
   const elements = useElements();
-  let total = Number(offer.product_price) + 1.2;
+  let total = Number(product_price) + 1.2;
   total = total.toFixed(2);
 
   const [completed, setCompleted] = useState(false);
@@ -26,7 +26,7 @@ const CheckoutForm = ({ offer }) => {
         {
           stripeToken: stripeToken,
           amount: total,
-          title: offer.product_name,
+          title: product_name,
         }
       );
       console.log(response.data);
@@ -46,7 +46,7 @@ const CheckoutForm = ({ offer }) => {
           <div className="checkoutform-fees">
             <div className="checkoutform-fee">
               <div>Commande</div>
-              <div>{offer.product_price} €</div>
+              <div>{product_price} €</div>
             </div>
             <div className="checkoutform-fee">
               <div>Frais protection acheteurs</div>
@@ -65,7 +65,7 @@ const CheckoutForm = ({ offer }) => {
             </div>
             <div className="checkoutform-last-step">
               Il ne vous reste plus qu'une étape pour vous offrir
-              <span> {offer.product_name}</span>. Vous allez payer
+              <span> {product_name}</span>. Vous allez payer
               <span> {total}</span> € (frais de protection et frais de port
               inclus).
             </div>
