@@ -23,11 +23,14 @@ const CheckoutForm = ({ product_name, product_price }) => {
       });
       console.log(stripeResponse);
       const stripeToken = stripeResponse.token.id;
-      const response = await axios.post("http://localhost:8000/payment", {
-        stripeToken: stripeToken,
-        amount: total,
-        title: product_name,
-      });
+      const response = await axios.post(
+        "https://vinted-react-by-adeline.herokuapp.com/payment",
+        {
+          stripeToken: stripeToken,
+          amount: total,
+          title: product_name,
+        }
+      );
       console.log(response.data);
       if (response.data.status === "succeeded") {
         setCompleted(true);
