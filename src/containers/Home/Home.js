@@ -1,4 +1,5 @@
 import "./index.css";
+import "../../responsive.css";
 import image1 from "../../image1.jpeg";
 import image2 from "../../image2.svg";
 import Filters from "../../components/Filters/Filters.js";
@@ -14,7 +15,9 @@ const Home = ({ data, welcomeMessage, setQueries, queries, min, max }) => {
         <img className="image1" src={image1} alt="" />
         <img className="image2" src={image2} alt="" />
         <div className="headline">
-          <h1>Prêts à faire du tri dans vos placards ?</h1>
+          <h1 style={{ fontSize: "36px" }}>
+            Prêts à faire du tri dans vos placards ?
+          </h1>
           <Link to="/publish">
             <button className="CTA-blue-big">Vends maintenant</button>
           </Link>

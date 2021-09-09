@@ -17,8 +17,6 @@
 .searchBar {
   margin: 8px 45px;
   position: relative;
-  top: 0;
-  left: 0;
   width: 60%;
 }
 
@@ -32,9 +30,6 @@
   margin-bottom: 15px;
   border: none;
   background-color: #f5f6f7;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
 .searchBar > i {
@@ -59,6 +54,10 @@
   text-decoration: none;
 }
 
+.CTA-white:hover {
+  color: var(--blue);
+}
+
 .CTA-blue-small {
   color: white;
   background-color: var(--blue);
@@ -70,4 +69,8 @@
   font-size: 12px;
   margin: auto 0;
   cursor: pointer;
+}
+
+.CTA-blue-small:hover {
+  color: white;
 }

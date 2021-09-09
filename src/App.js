@@ -4,6 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ReactLoading from "react-loading";
 import Header from "./components/Header/Header.js";
 import Home from "./containers/Home/Home.js";
 import Offer from "./containers/Offer/Offer.js";
@@ -60,9 +61,6 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(
-          `https://vinted-react-by-adeline.herokuapp.com/offers?sort=${queries.sort}${title}${priceMin}${priceMax}${skip}${limit}`
-        );
         const response = await axios.get(
           `https://vinted-react-by-adeline.herokuapp.com/offers?sort=${queries.sort}${title}${priceMin}${priceMax}${skip}${limit}`
         );
@@ -76,7 +74,13 @@ function App() {
   }, [queries, title, priceMin, priceMax, skip, limit]);
 
   return isLoading ? (
-    <span>En cours de chargement...</span>
+    <ReactLoading
+      type="bubbles"
+      color="#0baeb7"
+      height={600}
+      width={160}
+      className="loading"
+    />
   ) : (
     <Router>
       <Header

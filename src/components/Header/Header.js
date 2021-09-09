@@ -1,4 +1,5 @@
 import "./index.css";
+import "../../responsive.css";
 import logo from "../../logo.png";
 import { Link } from "react-router-dom";
 
@@ -33,9 +34,11 @@ const Header = ({ token, setUser, queries, setQueries }) => {
           <Link to="/user/login" className="CTA-white">
             Se connecter
           </Link>
+          <Link to="/user/signup" className="login-signup">
+            S'inscrire / Se connecter
+          </Link>
         </div>
       )}
-
       <Link to="/publish" className="CTA-blue-small">
         Vends maintenant
       </Link>

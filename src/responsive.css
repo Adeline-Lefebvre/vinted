@@ -1,5 +1,37 @@
-/* 320px — 480px: Mobile devices
-481px — 768px: iPads, Tablets
-769px — 1024px: Small screens, laptops
-1025px — 1200px: Desktops, large screens
-1201px and more —  Extra large screens, TV */
+@media (max-width: 1190px) {
+  .header .CTA-white {
+    display: none;
+  }
+
+  .login-signup {
+    font-size: 12px;
+    line-height: 25px;
+    width: 150px;
+    color: var(--blue);
+    text-align: center;
+    border-radius: 5px;
+    border: var(--blue) solid 1px;
+    background-color: white;
+    margin: auto 10px auto 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 1190px) {
+  .login-signup {
+    display: none;
+  }
+}
+
+@media (max-width: 970px) {
+  .login-signup {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .header .CTA-blue-small {
+    display: none;
+  }
+}
